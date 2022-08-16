@@ -11,18 +11,27 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
+	int counter;
 
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		img = new Texture("gadget.jpg");
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
+		float x = Gdx.input.getX() - img.getWidth()/2;
+		float y = Gdx.graphics.getHeight() - Gdx.input.getY() - img.getHeight()/2;
+
+		if(Gdx.input.isButtonJustPressed(Input.Buttons.LEFT)) {
+			counter++;
+		}
+
+		Gdx.graphics.setTitle("Clicked " + counter + " times");
+		ScreenUtils.clear(0, 0, 0, 1);
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(img, x, y);
 		batch.end();
 	}
 	
