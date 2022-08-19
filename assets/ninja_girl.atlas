@@ -1,0 +1,285 @@
+
+ninja_girl.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Dead_
+  rotate: false
+  xy: 1, 865
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 0
+Dead_
+  rotate: false
+  xy: 1, 713
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 1
+Dead_
+  rotate: false
+  xy: 148, 865
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 2
+Dead_
+  rotate: false
+  xy: 1, 561
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 3
+Dead_
+  rotate: false
+  xy: 148, 713
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 4
+Dead_
+  rotate: false
+  xy: 295, 865
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 5
+Dead_
+  rotate: false
+  xy: 1, 409
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 6
+Dead_
+  rotate: false
+  xy: 1, 409
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 7
+Dead_
+  rotate: false
+  xy: 1, 409
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 8
+Dead_
+  rotate: false
+  xy: 1, 409
+  size: 145, 150
+  orig: 145, 150
+  offset: 0, 0
+  index: 9
+Jump_
+  rotate: false
+  xy: 148, 575
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 0
+Jump_
+  rotate: false
+  xy: 295, 727
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 1
+Jump_
+  rotate: false
+  xy: 442, 879
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 2
+Jump_
+  rotate: false
+  xy: 1, 271
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 3
+Jump_
+  rotate: false
+  xy: 1, 271
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 4
+Jump_
+  rotate: false
+  xy: 1, 271
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 5
+Jump_
+  rotate: false
+  xy: 148, 437
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 6
+Jump_
+  rotate: false
+  xy: 544, 879
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 7
+Jump_
+  rotate: false
+  xy: 1, 133
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 8
+Jump_
+  rotate: false
+  xy: 1, 133
+  size: 100, 136
+  orig: 100, 136
+  offset: 0, 0
+  index: 9
+Run_
+  rotate: false
+  xy: 646, 885
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 0
+Run_
+  rotate: false
+  xy: 1, 1
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 1
+Run_
+  rotate: false
+  xy: 742, 885
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 2
+Run_
+  rotate: false
+  xy: 838, 885
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 3
+Idle_
+  rotate: false
+  xy: 934, 890
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 0
+Run_
+  rotate: false
+  xy: 250, 581
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 4
+Run_
+  rotate: false
+  xy: 250, 449
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 5
+Run_
+  rotate: false
+  xy: 397, 733
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 6
+Run_
+  rotate: false
+  xy: 493, 747
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 7
+Run_
+  rotate: false
+  xy: 589, 747
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 8
+Run_
+  rotate: false
+  xy: 685, 753
+  size: 94, 130
+  orig: 94, 130
+  offset: 0, 0
+  index: 9
+Idle_
+  rotate: false
+  xy: 781, 758
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 1
+Idle_
+  rotate: false
+  xy: 856, 758
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 2
+Idle_
+  rotate: false
+  xy: 103, 282
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 3
+Idle_
+  rotate: false
+  xy: 103, 155
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 4
+Idle_
+  rotate: false
+  xy: 178, 310
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 5
+Idle_
+  rotate: false
+  xy: 178, 183
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 6
+Idle_
+  rotate: false
+  xy: 253, 322
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 7
+Idle_
+  rotate: false
+  xy: 253, 195
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 8
+Idle_
+  rotate: false
+  xy: 346, 600
+  size: 73, 125
+  orig: 73, 125
+  offset: 0, 0
+  index: 9
