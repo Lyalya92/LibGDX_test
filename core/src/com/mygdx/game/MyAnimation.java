@@ -6,18 +6,12 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class MyAnimation {
-    private TextureAtlas atlas;
     private float time;
     private Animation<TextureRegion> animation;
 
-    public MyAnimation(String name, String animationType, Animation.PlayMode playMode){
+    public MyAnimation(TextureAtlas atlas, String animationType, Animation.PlayMode playMode){
         time += Gdx.graphics.getDeltaTime();
-        atlas = new TextureAtlas(name);
-        TextureRegion[] region = new TextureRegion[10];
-        for (int i = 0; i < 10; i++) {
-            region [i] = atlas.findRegion(animationType, i);
-        }
-        animation = new Animation(1/60f, region );
+        animation = new Animation(1/60f, atlas.findRegions(animationType));
         animation.setFrameDuration(1/15f);
         animation.setPlayMode(playMode);
     }
@@ -45,7 +39,7 @@ public class MyAnimation {
     }
 
     public void dispose(){
-        atlas.dispose();
+
     }
 
 }
