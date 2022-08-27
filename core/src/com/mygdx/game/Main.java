@@ -13,7 +13,6 @@ public class Main extends Game {
 
     @Override
     public void create() {
-        Gdx.graphics.setWindowedMode(1080, 600);
         ninjaGirl = new NinjaGirl();
         atlasGirl = new TextureAtlas("atlas/ninja_girl.atlas");
         atlasTitles = new TextureAtlas("atlas/titles_and_menu.atlas");
