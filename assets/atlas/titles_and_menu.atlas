@@ -1,0 +1,26 @@
+
+titles_and_menu.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+StartScreen_
+  rotate: false
+  xy: 1, 77
+  size: 546, 86
+  orig: 546, 86
+  offset: 0, 0
+  index: 1
+StartScreen_
+  rotate: false
+  xy: 1, 1
+  size: 404, 74
+  orig: 404, 74
+  offset: 0, 0
+  index: 3
+StartScreen_
+  rotate: false
+  xy: 549, 107
+  size: 394, 56
+  orig: 394, 56
+  offset: 0, 0
+  index: 2
