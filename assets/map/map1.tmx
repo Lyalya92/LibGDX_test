@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="52" height="24" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="27">
+ <tileset firstgid="1" name="texture" tilewidth="32" tileheight="32" tilecount="256" columns="64">
+  <image source="texture.png" width="2048" height="128"/>
+ </tileset>
+ <layer id="1" name="background" width="52" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztlttOAjEQhnurtx4gqBER8IiKLwC3cCuiAY0k3qiJAr6AhifxWXgyviZsUiY1C2yXAtk/+dIt2e3MtPMvq1SiRImWSSW4gmsow63fdCLrE76gC3349puOd9WU+tsA33m4Up1aNle8HtNzNyp+38l488b9r5dMz/VU/L6T8eaNuw69pBWcS1Svyz5ZRG/aFJxL1PORfbKI3rR524X3fMnmbRfeW2X5+maK67/c1zdT8v51n4OLtVy9f13kEHbfFmzDDuxCaop5Op6UQ3OUsatQEeMdNOAemvAwxfwUzuBcTdaatqw/62ju7yFk4Xicg479aNTzCz9ivIBLKEARTiAfMn+Dd/gwaj2CnGX9WUdzf1+gA6/j+EGMQEML+vkWtOFJXD8bc/m77V69d4OI6HwysAf74vpAnM8Ihwlm6Q==
+  </data>
+ </layer>
+ <layer id="5" name="decoration_l1" width="52" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzt1TkOwjAARNE0kILlOpAA6YAikOuQDc7OL5ErC6+CedJvLEWZxnJRiIjIr1nROvWIDwc60omaL75v6eZ1kZuJZnrSK/EWH3a0p4rqxFt8eFBPA40B/7OgJZXGeW73z9aZLnQ1znO7fyKhuL5VufnXt2pD2yiL3Ni+VXfqoiwSkdDeQVcORw==
+  </data>
+ </layer>
+ <layer id="6" name="decoration_l2" width="52" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzjsOglAURVEUlIqPTkWlR0QrBJ0KwvjdJY0JeQI3IWcnq3uf43lKKaXW2AlnXJAZb5miFh906I23rLUIsfWICavwtB6hlFLq7xKkOOBovOVXO+wRjjhbo8ELb4e/NtjCR+Bwf0wl7njM9P6wHFcUuC3wn1JWfQGJkgbX
+  </data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="5" name="border" x="1.33333" y="0" width="1662.79" height="769.303">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="6" x="161.333" y="641.333" width="446.667" height="125.333">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="7" x="608" y="670.667" width="188" height="96">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="8" x="1314.67" y="670.667" width="158.667" height="97.3333">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="9" x="1473.33" y="640" width="125.333" height="128">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="10" x="1504" y="576.667" width="64" height="62.6667">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="11" x="1184" y="192" width="64" height="62.6667">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="12" x="832.333" y="352.667" width="64" height="62.6667">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="13" x="896" y="287.667" width="63.6667" height="128.333">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="14" x="1088.33" y="256.333" width="191.667" height="14.6667">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="15" x="320.333" y="288" width="255.667" height="21">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="16" x="672.333" y="128" width="159" height="18.3333">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="17" x="672.5" y="415.5" width="382.5" height="24.5">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="18" x="512" y="512" width="64" height="127.5">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="19" x="448" y="576.5" width="63.5" height="63">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="20" x="1408.5" y="351.5" width="223" height="27.5">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+  <object id="21" x="1215.5" y="480" width="159.5" height="24.5">
+   <properties>
+    <property name="BodyType" value="StaticBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="7" name="setting">
+  <object id="26" name="hero" x="336.75" y="578.082" width="46" height="61.6667">
+   <properties>
+    <property name="BodyType" value="DynamicBody"/>
+    <property name="gravityScale" type="float" value="1"/>
+    <property name="restitution" type="float" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
