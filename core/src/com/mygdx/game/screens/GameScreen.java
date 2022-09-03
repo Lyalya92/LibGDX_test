@@ -87,8 +87,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        camera.position.x = body.getPosition().x;
-        camera.position.y = body.getPosition().y;
+        camera.position.x = body.getPosition().x * MyPhysic.PPM;
+        camera.position.y = body.getPosition().y * MyPhysic.PPM;
         camera.update();
 
         ScreenUtils.clear(0, 0, 0, 1);
@@ -100,14 +100,14 @@ public class GameScreen implements Screen {
         if ((Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT))
                 && (mapSize.x < body.getPosition().x-1))
         {
-            body.applyForceToCenter(new Vector2(-1000000,0), true);
+            body.applyForceToCenter(new Vector2(-0.5f,0), true);
             runDirection = Direction.LEFT;
             animation = anmRun;
         }
 
         if ((Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT))
                 && (body.getPosition().x < mapSize.x + mapSize.width-1)) {
-            body.applyForceToCenter(new Vector2(1000000,0), true);
+            body.applyForceToCenter(new Vector2(0.5f,0), true);
             runDirection = Direction.RIGHT;
             animation = anmRun;
         }
@@ -125,8 +125,8 @@ public class GameScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         batch.draw(img, 0, 0);
-        heroRect.x = body.getPosition().x;
-        heroRect.y = body.getPosition().y;
+        heroRect.x = body.getPosition().x * MyPhysic.PPM;
+        heroRect.y = body.getPosition().y * MyPhysic.PPM;
         batch.draw(animation.getFrame(), heroRect.x - heroRect.width/2, heroRect.y - heroRect.height/2, heroRect.width, heroRect.height);
         batch.end();
         mapRenderer.setView(camera);
