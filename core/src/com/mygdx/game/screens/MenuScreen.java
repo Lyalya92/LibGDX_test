@@ -3,6 +3,7 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -17,6 +18,7 @@ public class MenuScreen implements Screen {
     private SpriteBatch batch;
     private Texture img, imgMenu;
     private Rectangle startRect;
+    private final Music music;
 
     public MenuScreen(Main game, NinjaGirl ninjaGirl) {
         this.game = game;
@@ -25,6 +27,10 @@ public class MenuScreen implements Screen {
         img = new Texture("scene/tropical-forest.png");
         imgMenu = new Texture("scene/menu.png");
         startRect = new Rectangle(515, 198, 164, 50);
+        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/ChecksForFree.mp3"));
+        music.setLooping(true);
+        music.setVolume(0.2f);
+        music.play();
     }
 
     @Override
@@ -77,5 +83,6 @@ public class MenuScreen implements Screen {
         img.dispose();
         imgMenu.dispose();
         imgMenu.dispose();
+        music.dispose();
     }
 }

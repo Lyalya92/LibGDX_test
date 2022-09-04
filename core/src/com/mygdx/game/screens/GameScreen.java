@@ -3,6 +3,7 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -18,21 +19,22 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.*;
 
+import java.util.ArrayList;
+
 public class GameScreen implements Screen {
     private Main game;
     private NinjaGirl ninjaGirl;
+    public static boolean isOnGround;
 
     private SpriteBatch batch;
     private Texture img;
     private OrthographicCamera camera;
     private TiledMap map;
     private OrthogonalTiledMapRenderer mapRenderer;
-    private Vector2 camPosition;
-    private Rectangle mapSize;
 
     private ShapeRenderer shapeRenderer;
     private MyPhysic myPhysic;
-    private Body body;
+    private Body hero;
     private final Rectangle heroRect;
 
     private final int [] bg;
@@ -41,14 +43,21 @@ public class GameScreen implements Screen {
     private MyAnimation animation;
     private MyAnimation anmRun;
     private MyAnimation anmIdle;
+    private MyAnimation anmJump;
 
+    public static ArrayList<Body> deletedBodies;
     private Direction runDirection;
+
+    private Sound sound_jump;
 
     public GameScreen(Main game, NinjaGirl ninjaGirl) {
         this.game = game;
         this.ninjaGirl = ninjaGirl;
+        isOnGround = true;
+        deletedBodies = new ArrayList<>();
         anmRun = ninjaGirl.anmRun();
         anmIdle = ninjaGirl.anmIdle();
+        anmJump = ninjaGirl.anmJump();
         this.animation = anmIdle;
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
@@ -57,14 +66,10 @@ public class GameScreen implements Screen {
         camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         map = new TmxMapLoader().load("map/map1.tmx");
         mapRenderer = new OrthogonalTiledMapRenderer(map);
-        camPosition = new Vector2();
         RectangleMapObject tmp = (RectangleMapObject)map.getLayers().get("setting").getObjects().get("hero");
-        body = myPhysic.addObject(tmp);
+        hero = myPhysic.addObject(tmp);
+        hero.setFixedRotation(true);
         heroRect = tmp.getRectangle();
-
-
-        mapSize = ((RectangleMapObject)map.getLayers().get("objects").getObjects().get("border"))
-                .getRectangle();
 
         bg = new int[1];
         layers = new int[2];
@@ -78,6 +83,8 @@ public class GameScreen implements Screen {
             myPhysic.addObject(obj);
         }
         runDirection = Direction.STAND;
+
+        sound_jump = Gdx.audio.newSound(Gdx.files.internal("sounds/sound_jump.mp3"));
     }
 
     @Override
@@ -87,8 +94,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        camera.position.x = body.getPosition().x * MyPhysic.PPM;
-        camera.position.y = body.getPosition().y * MyPhysic.PPM;
+        camera.position.x = hero.getPosition().x * MyPhysic.PPM;
+        camera.position.y = hero.getPosition().y * MyPhysic.PPM;
         camera.update();
 
         ScreenUtils.clear(0, 0, 0, 1);
@@ -97,19 +104,25 @@ public class GameScreen implements Screen {
         if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) camera.zoom += 0.01;
         if (Gdx.input.isKeyPressed(Input.Keys.UP) && camera.zoom >0) camera.zoom -= 0.01;
 
-        if ((Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT))
-                && (mapSize.x < body.getPosition().x-1))
+        if ((Gdx.input.isKeyPressed(Input.Keys.A) || Gdx.input.isKeyPressed(Input.Keys.LEFT)))
         {
-            body.applyForceToCenter(new Vector2(-0.5f,0), true);
+            hero.applyForceToCenter(new Vector2(-2.2f*100000,0), true);
             runDirection = Direction.LEFT;
             animation = anmRun;
         }
 
-        if ((Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT))
-                && (body.getPosition().x < mapSize.x + mapSize.width-1)) {
-            body.applyForceToCenter(new Vector2(0.5f,0), true);
+        if ((Gdx.input.isKeyPressed(Input.Keys.D) || Gdx.input.isKeyPressed(Input.Keys.RIGHT)))
+        {
+            hero.applyForceToCenter(new Vector2(2.2f*100000,0), true);
             runDirection = Direction.RIGHT;
             animation = anmRun;
+        }
+
+        if (Gdx.input.isKeyPressed(Input.Keys.SPACE) && isOnGround)
+        {
+            sound_jump.play();
+            hero.applyForceToCenter(new Vector2(0,10.2f*2*100000), true);
+            animation = anmJump;
         }
         if (!Gdx.input.isKeyPressed(Input.Keys.ANY_KEY)) {
             runDirection = Direction.STAND;
@@ -122,12 +135,21 @@ public class GameScreen implements Screen {
         mapRenderer.setView(camera);
         mapRenderer.render(bg);
 
-        batch.setProjectionMatrix(camera.combined);
+        myPhysic.step();
+        myPhysic.debugDraw(camera);
+
+        for (int i = 0; i < deletedBodies.size(); i++) {
+            myPhysic.destroyBody(deletedBodies.get(i));
+        }
+        deletedBodies.clear();
+
+
         batch.begin();
         batch.draw(img, 0, 0);
-        heroRect.x = body.getPosition().x * MyPhysic.PPM;
-        heroRect.y = body.getPosition().y * MyPhysic.PPM;
-        batch.draw(animation.getFrame(), heroRect.x - heroRect.width/2, heroRect.y - heroRect.height/2, heroRect.width, heroRect.height);
+        heroRect.x = Gdx.graphics.getWidth()/2 - heroRect.width / 2 / camera.zoom;
+        heroRect.y = Gdx.graphics.getHeight()/2 - heroRect.height / 2 / camera.zoom;
+        heroRect.width /= camera.zoom; heroRect.height /= camera.zoom;
+        batch.draw(animation.getFrame(), heroRect.x, heroRect.y, heroRect.width, heroRect.height);
         batch.end();
         mapRenderer.setView(camera);
         mapRenderer.render(bg);
@@ -141,15 +163,6 @@ public class GameScreen implements Screen {
             dispose();
             game.setScreen(new MenuScreen(this.game, this.ninjaGirl));
         }
-
-//        shapeRenderer.setProjectionMatrix(camera.combined);
-//        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-//        shapeRenderer.setColor(Color.RED);
-//        for (RectangleMapObject obj: objects) {
-//            Rectangle rect = obj.getRectangle();
-//            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
-//        }
-//        shapeRenderer.end();
     }
 
     @Override
@@ -182,5 +195,7 @@ public class GameScreen implements Screen {
     anmIdle.dispose();
     map.dispose();
     shapeRenderer.dispose();
+    sound_jump.dispose();
     }
+
 }

@@ -3,6 +3,7 @@ package com.mygdx.game.screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -28,10 +29,11 @@ public class StartScreen implements Screen {
     float x,y;
     private float shift = 1;
 
+    private final Music music;
+
     public StartScreen(Main game, NinjaGirl ninjaGirl) {
         this.game = game;
         this.ninjaGirl = ninjaGirl;
-
         anmIdle = ninjaGirl.anmIdle();
         anmGlide = ninjaGirl.anmGlide();
         animation = anmGlide;
@@ -45,6 +47,11 @@ public class StartScreen implements Screen {
         for (int i = 1; i <=3; i++) {
             regTitles[i-1] = Main.atlasTitles.findRegion("StartScreen_",i);
         }
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("sounds/ChecksForFree.mp3"));
+        music.setLooping(true);
+        music.setVolume(0.2f);
+        music.play();
     }
     @Override
     public void show() {
@@ -101,5 +108,6 @@ public class StartScreen implements Screen {
         animation.dispose();
         anmGlide.dispose();
         anmIdle.dispose();
+        music.dispose();
     }
 }

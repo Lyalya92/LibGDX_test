@@ -16,4 +16,7 @@ public class NinjaGirl {
     public MyAnimation anmGlide() {
         return new MyAnimation(Main.atlasGirl, "Glide", Animation.PlayMode.LOOP);
     }
+    public MyAnimation anmJump() {
+        return new MyAnimation(Main.atlasGirl, "Jump_", Animation.PlayMode.LOOP);
+    }
 }
