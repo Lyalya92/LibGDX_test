@@ -5,11 +5,13 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
+import com.mygdx.game.handlers.MyContactListener;
+import com.mygdx.game.objects.Feather;
 
 public class MyPhysic {
     private final World world;
     private final Box2DDebugRenderer debugRenderer;
-    public static final float PPM = 1;
+    public static final float PPM = 100;
 
     public MyPhysic() {
         world = new World(new Vector2(0, -9.81f), true);
@@ -33,7 +35,7 @@ public class MyPhysic {
         polygonShape.setAsBox(rect.width/2/PPM, rect.height/2/PPM);
 
         fdef.shape = polygonShape;
-        fdef.friction = 0.23f; // шершавость поверхности. 0 - абсолютно гладкий, больше 7 уже разницы нет
+        fdef.friction = 0.2f; // шершавость поверхности. 0 - абсолютно гладкий, больше 7 уже разницы нет
         fdef.density = 1; //плотность
         if (object.getProperties().get("restitution") != null)
             fdef.restitution = (float) object.getProperties().get("restitution"); // прыгучесть
@@ -47,6 +49,10 @@ public class MyPhysic {
             body.createFixture(fdef).setUserData("bottom");
             body.getFixtureList().get(body.getFixtureList().size-1).setSensor(true);
         }
+        if (name!=null && name.equals("feather")) {
+            new Feather((int) (Math.random()*3), body, rect);
+        }
+
         polygonShape.dispose();
         return body;
     }

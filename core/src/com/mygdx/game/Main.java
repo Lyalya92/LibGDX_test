@@ -3,6 +3,7 @@ package com.mygdx.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.mygdx.game.entities.NinjaGirl;
 import com.mygdx.game.screens.StartScreen;
 
 public class Main extends Game {

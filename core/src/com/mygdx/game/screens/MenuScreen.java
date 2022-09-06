@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.Main;
-import com.mygdx.game.NinjaGirl;
+import com.mygdx.game.entities.NinjaGirl;
 
 public class MenuScreen implements Screen {
     private Main game;
