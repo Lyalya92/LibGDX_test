@@ -9,9 +9,11 @@ import com.badlogic.gdx.physics.box2d.*;
 public class MyPhysic {
     private final World world;
     private final Box2DDebugRenderer debugRenderer;
+    public static final float PPM = 1;
 
     public MyPhysic() {
         world = new World(new Vector2(0, -9.81f), true);
+        world.setContactListener(new MyContactListener());
         debugRenderer = new Box2DDebugRenderer();
     }
 
@@ -25,21 +27,26 @@ public class MyPhysic {
         if (type.equals("StaticBody")) def.type = BodyDef.BodyType.StaticBody;
         if (type.equals("DynamicBody")) def.type = BodyDef.BodyType.DynamicBody;
 
-        def.position.set(rect.x + rect.width/2, rect.y + rect.height/2);
+        def.position.set((rect.x + rect.width/2)/PPM, (rect.y + rect.height/2)/PPM);
         def.gravityScale = (float) object.getProperties().get("gravityScale");
 
-        polygonShape.setAsBox(rect.width/2, rect.height/2);
+        polygonShape.setAsBox(rect.width/2/PPM, rect.height/2/PPM);
 
         fdef.shape = polygonShape;
-        fdef.friction = 0; // шершавость поверхности. 0 - абсолютно гладкий, больше 7 уже разницы нет
+        fdef.friction = 0.23f; // шершавость поверхности. 0 - абсолютно гладкий, больше 7 уже разницы нет
         fdef.density = 1; //плотность
         if (object.getProperties().get("restitution") != null)
             fdef.restitution = (float) object.getProperties().get("restitution"); // прыгучесть
 
         Body body;
         body = world.createBody(def);
-        body.createFixture(fdef).setUserData("wall");
-
+        String name = object.getName();
+        body.createFixture(fdef).setUserData(name);
+        if (name!=null && name.equals("hero")){
+            polygonShape.setAsBox(rect.width/12/PPM, rect.height/12/PPM, new Vector2(0,-rect.height/2/PPM), 0);
+            body.createFixture(fdef).setUserData("bottom");
+            body.getFixtureList().get(body.getFixtureList().size-1).setSensor(true);
+        }
         polygonShape.dispose();
         return body;
     }
@@ -56,6 +63,9 @@ public class MyPhysic {
         debugRenderer.render(world, cam.combined);
     }
 
+    public void destroyBody(Body body) {
+        world.destroyBody(body);
+    }
     public void dispose() {
         world.dispose();
         debugRenderer.dispose();

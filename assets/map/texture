@@ -1,0 +1,237 @@
+
+texture.png
+size: 2048, 128
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+Bush1
+  rotate: false
+  xy: 0, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Bush1
+  rotate: false
+  xy: 64, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Bush2
+  rotate: false
+  xy: 128, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Bush2
+  rotate: false
+  xy: 192, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Crate
+  rotate: false
+  xy: 256, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+Mushroom
+  rotate: false
+  xy: 320, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Mushroom
+  rotate: false
+  xy: 384, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Stone
+  rotate: false
+  xy: 448, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Stone
+  rotate: false
+  xy: 512, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Terra
+  rotate: false
+  xy: 576, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Terra
+  rotate: false
+  xy: 640, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Terra
+  rotate: false
+  xy: 704, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+Terra
+  rotate: false
+  xy: 768, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+Terra
+  rotate: false
+  xy: 832, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 5
+Terra
+  rotate: false
+  xy: 896, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 6
+Terra
+  rotate: false
+  xy: 960, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 7
+Terra
+  rotate: false
+  xy: 1024, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 8
+Terra
+  rotate: false
+  xy: 1088, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 9
+Terra
+  rotate: false
+  xy: 1152, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 10
+Terra
+  rotate: false
+  xy: 1216, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 11
+Terra
+  rotate: false
+  xy: 1280, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 12
+Terra
+  rotate: false
+  xy: 1344, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 13
+Terra
+  rotate: false
+  xy: 1408, 0
+  size: 64, 47
+  orig: 64, 47
+  offset: 0, 0
+  index: 14
+Terra
+  rotate: false
+  xy: 1472, 0
+  size: 64, 47
+  orig: 64, 47
+  offset: 0, 0
+  index: 15
+Terra
+  rotate: false
+  xy: 1536, 0
+  size: 64, 47
+  orig: 64, 47
+  offset: 0, 0
+  index: 16
+Tree1
+  rotate: false
+  xy: 1600, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Tree1
+  rotate: false
+  xy: 1664, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Tree2
+  rotate: false
+  xy: 1728, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Tree2
+  rotate: false
+  xy: 1792, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2
+Tree2
+  rotate: false
+  xy: 1856, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 3
+Tree2
+  rotate: false
+  xy: 1920, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 4
+Water
+  rotate: false
+  xy: 1984, 0
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 1
+Water
+  rotate: false
+  xy: 0, 64
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: 2

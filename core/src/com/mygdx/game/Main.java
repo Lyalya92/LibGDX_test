@@ -1,7 +1,6 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.mygdx.game.screens.StartScreen;
@@ -14,7 +13,7 @@ public class Main extends Game {
     @Override
     public void create() {
         ninjaGirl = new NinjaGirl();
-        atlasGirl = new TextureAtlas("atlas/ninja_girl.atlas");
+        atlasGirl = new TextureAtlas("atlas/girl_new");
         atlasTitles = new TextureAtlas("atlas/titles_and_menu.atlas");
         setScreen(new StartScreen(this, ninjaGirl));
     }
