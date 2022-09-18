@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package com.mygdx.game.handlers;
 
 import com.badlogic.gdx.physics.box2d.*;
 import com.mygdx.game.screens.GameScreen;

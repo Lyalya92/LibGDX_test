@@ -11,7 +11,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.Main;
 import com.mygdx.game.MyAnimation;
-import com.mygdx.game.NinjaGirl;
+import com.mygdx.game.entities.NinjaGirl;
 
 public class StartScreen implements Screen {
     private Main game;

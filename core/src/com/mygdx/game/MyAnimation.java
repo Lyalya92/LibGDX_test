@@ -9,10 +9,11 @@ public class MyAnimation {
     private float time;
     private Animation<TextureRegion> animation;
 
-    public MyAnimation(TextureAtlas atlas, String animationType, Animation.PlayMode playMode){
+
+    public MyAnimation(TextureAtlas atlas, String animationType, Animation.PlayMode playMode, float frameDuration){
         time += Gdx.graphics.getDeltaTime();
         animation = new Animation(1/60f, atlas.findRegions(animationType));
-        animation.setFrameDuration(1/15f);
+        animation.setFrameDuration(frameDuration);
         animation.setPlayMode(playMode);
     }
 
